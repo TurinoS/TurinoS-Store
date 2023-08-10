@@ -2,7 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        
+        --cream: #efe7d1;
+        --plum: #312e39;
     }
     
     * {
@@ -17,5 +18,6 @@ export const GlobalStyle = createGlobalStyle`
         color: var(--marine-blue);
         max-height: 100vw;
         width: 100%;
+        color: var(--plum);
     }
 `
