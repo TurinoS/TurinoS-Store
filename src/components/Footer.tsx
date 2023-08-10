@@ -7,8 +7,40 @@ import { BsInstagram, BsGithub, BsLinkedin } from "react-icons/bs"
 const StyledFooter = styled.footer`
     background-color: var(--plum);
     color: var(--cream);
+    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding: 2em 1em;
+
+    & div {
+        display: flex;
+        flex-direction: column;
+        gap: .5em;
+        align-items: center;
+
+        & h3 {
+            margin-bottom: .5em;
+            font-size: 24px;
+        }
+
+        & a {
+            text-decoration: none;
+            color: var(--cream);
+        }
+    }
+
+    & .links {
+        display: flex;
+        flex-direction: row;
+        gap: 1.25em;
+    }
+
+    & .developer {
+        padding: 2em 3em;
+        border-top: 1px solid var(--cream);
+    }
 ` 
 
 export default function Footer() {
@@ -40,6 +72,9 @@ export default function Footer() {
                 <p>Rua 12 de Outubro, 1153, 19020-520, SP</p>
                 <p>+55 (18) 99666-7708</p>
                 <Link href='https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJqXxwnzgzLjGhTDGrlCPvsdFdnrmdtqQtLKZNVQmzcKZGRXrqMPhdTwHMhhXZbpWgCmBKg'>paulo.turino01@gmail.com</Link>
+            </div>
+            <div className="developer">
+                <p>© 2023 TurinoS. Developed by Paulo Turino</p>
             </div>
         </StyledFooter>
     )
