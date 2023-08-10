@@ -39,7 +39,7 @@ const StyledFooter = styled.footer`
 
     & .developer {
         padding: 2em 3em;
-        border-top: 1px solid var(--cream);
+        border-top: 1px solid var(--light-plum);
     }
 ` 
 
