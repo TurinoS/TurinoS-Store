@@ -8,20 +8,27 @@ const StyledHeader = styled.header`
     font-size: 20px;
     padding-left: 1em;
     height: 65px;
+    width: 100vw;
 
     .icons {
-        gap: 2.5em;
+        gap: 2em;
     }
 
     & img {
         position: absolute;
         top: 3px;
         left: calc(50vw - 65px);
+        display: none;
+
+        @media (min-width: 380px) {
+            display: block;
+        }
     }
 
     & div {
         display: flex;
         gap: .25em;
+        overflow: visible;
 
         & span {
             display: flex;

@@ -17,7 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     body {
         background-color: var(--magnolia);
         color: var(--marine-blue);
-        max-height: 100vw;
         width: 100%;
         color: var(--plum);
     }

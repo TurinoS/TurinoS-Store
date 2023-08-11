@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import StyledComponentsRegistry from '../../registry'
+import { AppContextProvider } from '@/context/AppContext'
 
 export const metadata: Metadata = {
   title: 'TurinoS Store',
@@ -12,10 +13,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>  
-      </body>
-    </html>
+    <AppContextProvider>
+      <html lang="en">
+        <body>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>  
+        </body>
+      </html>
+    </AppContextProvider>
   )
 }
