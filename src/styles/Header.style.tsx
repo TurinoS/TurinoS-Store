@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { GiHamburgerMenu } from "react-icons/gi"
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
     background-color: var(--cream);
     display: flex;
     justify-content: space-between;
@@ -47,4 +48,29 @@ const StyledHeader = styled.header`
     }
 `
 
-export default StyledHeader;
+export const Menu = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+    position: absolute;
+    z-index: 2;
+    top: 42px;
+    left: 34px;
+    border-radius: 5px 20px;
+    background-color: var(--deep-coffee);
+    box-shadow: 1px 1px 6px 1px var(--light-plum);
+
+    & a {
+        text-decoration: none;
+        color: var(--cream);
+        font-weight: 600;
+        border-bottom: 1px solid var(--cream);
+    }
+`
+
+export const MenuIcon = styled(GiHamburgerMenu)`
+    &:hover {
+        cursor: pointer;
+    }
+`

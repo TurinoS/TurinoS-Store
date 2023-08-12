@@ -2,14 +2,9 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 5vh 7.5vw;
-    gap: 2em;
-
-    @media (min-width: 450px) {
-        justify-content: space-between;
-    }
+    flex-direction: column;
+    align-items: center;
+    padding: 0 5vw;
 
     & .logo {
         text-align: center;

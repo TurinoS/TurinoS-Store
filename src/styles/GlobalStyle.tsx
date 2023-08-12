@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
         --cream: #efe7d1;
         --plum: #312e39;
         --light-plum: #4e4174;
+        --deep-coffee: #65451F;
     }
     
     * {
