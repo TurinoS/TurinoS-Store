@@ -7,6 +7,8 @@ import Image from "next/image";
 import { StyledHeader, MenuIcon, Menu } from "@/styles/Header.style";
 import { useState } from "react";
 import Link from "next/link";
+import { GiSamusHelmet, GiJewelCrown, GiFlowerHat } from "react-icons/gi";
+import { FaRedhat } from "react-icons/fa";
 
 export default function Header() {
   const [menu, setMenu] = useState(false);
@@ -23,12 +25,12 @@ export default function Header() {
         <BiSearchAlt2 />
       </div>
 
-      {menu ?
+      {!menu ?
         <Menu>
-            <Link href='/men'>Men</Link>
-            <Link href='/women'>Women</Link>
-            <Link href='/jewelery'>Jewels</Link>
-            <Link href='/electronics'>Gadgets</Link>
+            <Link href='/men'><FaRedhat /> Men</Link>
+            <Link href='/women'><GiFlowerHat /> Women</Link>
+            <Link href='/jewelery'><GiJewelCrown /> Jewels</Link>
+            <Link href='/electronics'><GiSamusHelmet /> Gadgets</Link>
         </Menu> : 
         null
       }

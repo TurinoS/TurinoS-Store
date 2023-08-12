@@ -7,7 +7,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
-    padding-left: 1em;
+    padding: 0 1em;
     height: 65px;
     width: 100vw;
 
@@ -51,7 +51,6 @@ export const StyledHeader = styled.header`
 export const Menu = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 1em;
     padding: 1em;
     position: absolute;
     z-index: 2;
@@ -66,6 +65,7 @@ export const Menu = styled.div`
         color: var(--cream);
         font-weight: 600;
         border-bottom: 1px solid var(--cream);
+        margin-bottom: .25em;
     }
 `
 

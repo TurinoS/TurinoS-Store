@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--magnolia);
         color: var(--marine-blue);
         width: 100%;
+        overflow-x: hidden;
         color: var(--plum);
     }
 `
