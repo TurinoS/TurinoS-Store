@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi"
+import { BiSearchAlt2 } from "react-icons/bi";
 
 export const StyledHeader = styled.header`
     background-color: var(--cream);
@@ -48,7 +49,7 @@ export const StyledHeader = styled.header`
     }
 `
 
-export const Menu = styled.div`
+export const Menu = styled.nav`
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -66,10 +67,37 @@ export const Menu = styled.div`
         font-weight: 600;
         border-bottom: 1px solid var(--cream);
         margin-bottom: .25em;
+
+        &:hover {
+            color: var(--yellow-neon);
+        }
     }
 `
 
+export const SearchBar = styled.input`
+    padding: .5em 1em;
+    font-size: 18px;
+    border: none;
+    border-radius: 15px 5px;
+    box-shadow: 1px 1px 6px 1px var(--light-plum);
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 105px;
+    width: 200px;
+
+    @media (min-width: 425px) {
+        width: 250px
+    }
+`   
+
 export const MenuIcon = styled(GiHamburgerMenu)`
+    &:hover {
+        cursor: pointer;
+    }
+`
+
+export const SearchIcon = styled(BiSearchAlt2)`
     &:hover {
         cursor: pointer;
     }

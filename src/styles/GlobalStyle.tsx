@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         --plum: #312e39;
         --light-plum: #4e4174;
         --deep-coffee: #65451F;
+        --yellow-neon: #F7E987;
     }
     
     * {
