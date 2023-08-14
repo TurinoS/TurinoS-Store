@@ -1,6 +1,6 @@
 'use client'
 
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 
 type Product = {
     id: number;
@@ -21,6 +21,10 @@ type AppContextType = {
     womenData: Product[];
     jeweleryData: Product[];
     electronicsData: Product[];
+    cartPrice: number;
+    cartItems: number;
+    setCartPrice: Dispatch<SetStateAction<number>>;
+    setCartItems: Dispatch<SetStateAction<number>>;
 };
 
 export const AppContext = createContext<AppContextType>({
@@ -29,6 +33,10 @@ export const AppContext = createContext<AppContextType>({
     womenData: [],
     jeweleryData: [],
     electronicsData: [],
+    cartPrice: 0.00,
+    cartItems: 0,
+    setCartPrice: () => {},
+    setCartItems: () => {},
 });
 
 export function AppContextProvider({ children }: { children: ReactNode }) {
@@ -98,8 +106,13 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         fetchData();
     }, []);
 
+    //-------------------Cart-------------------
+
+    const [cartPrice, setCartPrice] = useState<number>(0.00);
+    const [cartItems, setCartItems] = useState<number>(0);
+
     return (
-        <AppContext.Provider value={{ homeData, menData, womenData, jeweleryData, electronicsData }}>
+        <AppContext.Provider value={{ homeData, menData, womenData, jeweleryData, electronicsData, cartPrice, cartItems, setCartPrice, setCartItems }}>
             {children}
         </AppContext.Provider>
     );

@@ -10,15 +10,6 @@ const ProductsContainer = styled.div`
     @media (min-width: 450px) {
         justify-content: space-between;
     }
-
-    & .logo {
-        text-align: center;
-        width: 85vw;
-
-        @media (min-width: 380px) {
-            display: none;
-        }
-    }
 `
 
 export default ProductsContainer;

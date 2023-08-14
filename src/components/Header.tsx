@@ -8,12 +8,14 @@ import {
   MenuIcon,
   Menu,
 } from "@/styles/Header.style";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import { GiSamusHelmet, GiJewelCrown, GiFlowerHat } from "react-icons/gi";
 import { FaRedhat } from "react-icons/fa";
+import { AppContext } from "@/context/AppContext";
 
 export default function Header() {
+  const { cartPrice, cartItems } = useContext(AppContext)
   const [menu, setMenu] = useState(false);
 
   const openMenu = () => {
@@ -49,10 +51,10 @@ export default function Header() {
       <Image src={logo} alt="Logo from TurinoS Store" width={130} height={60} />
 
       <div>
-        <p>$0.00</p>
+        <p>${cartPrice}</p>
         <div>
           <HiShoppingCart />
-          <span>0</span>
+          <span>{cartItems}</span>
         </div>
       </div>
     </StyledHeader>

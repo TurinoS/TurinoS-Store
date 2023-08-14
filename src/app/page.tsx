@@ -11,7 +11,13 @@ import Wrapper from "@/styles/Wrapper";
 import Banner from "@/components/Banner";
 
 export default function Home() {
-  const { homeData } = useContext(AppContext);
+  const { homeData, cartPrice, setCartPrice, cartItems, setCartItems } = useContext(AppContext);
+
+  const addToCart = (price: number) => {
+    const formatedPrice = parseFloat(price.toFixed(2))
+    setCartPrice(cartPrice + formatedPrice);
+    setCartItems(cartItems + 1);
+  }
 
   return (
     <Wrapper>
@@ -27,6 +33,7 @@ export default function Home() {
             price={item.price}
             title={item.title}
             rating={item.rating.rate}
+            onClick={() => addToCart(item.price)}
           />
         ))}
       </ProductsContainer>

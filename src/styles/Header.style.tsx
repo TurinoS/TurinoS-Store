@@ -12,6 +12,7 @@ export const StyledHeader = styled.header`
     height: 65px;
     width: 100vw;
     position: sticky;
+    z-index: 1;
     top: 0;
     box-shadow: 0 1px 6px 1px var(--light-plum);
 
