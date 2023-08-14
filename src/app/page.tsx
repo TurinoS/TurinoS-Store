@@ -14,8 +14,7 @@ export default function Home() {
   const { homeData, cartPrice, setCartPrice, cartItems, setCartItems } = useContext(AppContext);
 
   const addToCart = (price: number) => {
-    const formatedPrice = parseFloat(price.toFixed(2))
-    setCartPrice(cartPrice + formatedPrice);
+    setCartPrice(parseFloat((cartPrice + price).toFixed(2)));
     setCartItems(cartItems + 1);
   }
 

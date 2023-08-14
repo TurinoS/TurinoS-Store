@@ -19,7 +19,7 @@ export const StyledHeader = styled.header`
     & img {
         position: absolute;
         top: 3px;
-        left: calc(50vw - 105px);
+        left: calc(50vw - 130px);
 
         @media (min-width: 400px) {
             left: calc(50vw - 65px);    
