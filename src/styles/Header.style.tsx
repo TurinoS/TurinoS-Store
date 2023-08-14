@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { GiHamburgerMenu } from "react-icons/gi"
-import { BiSearchAlt2 } from "react-icons/bi";
+import { HiShoppingCart } from "react-icons/hi";
 
 export const StyledHeader = styled.header`
     background-color: var(--cream);
@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     align-items: center;
     font-size: 20px;
-    padding: 0 1em;
+    padding: 0 .5em 0 1em;
     height: 65px;
     width: 100vw;
     position: sticky;
@@ -16,14 +16,19 @@ export const StyledHeader = styled.header`
     top: 0;
     box-shadow: 0 1px 6px 1px var(--light-plum);
 
-    & img {
+    & .img {
         position: absolute;
         top: 3px;
-        left: calc(50vw - 130px);
+        left: calc(50vw - 100px);
 
         @media (min-width: 400px) {
             left: calc(50vw - 65px);    
         }
+    }
+
+    & p {
+        font-size: 15px;
+        align-self: center;
     }
 
     & div {
@@ -74,6 +79,12 @@ export const Menu = styled.nav`
 `
 
 export const MenuIcon = styled(GiHamburgerMenu)`
+    &:hover {
+        cursor: pointer;
+    }
+`
+
+export const CartIcon = styled(HiShoppingCart)`
     &:hover {
         cursor: pointer;
     }
