@@ -1,18 +1,14 @@
 import styled from "styled-components";
 
-const Wrapper = styled.div`
+const Wrapper = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 5vw;
 
-    & .logo {
-        text-align: center;
-        width: 85vw;
-
-        @media (min-width: 380px) {
-            display: none;
-        }
+    & h2 {
+        margin-top: 1em;
+        font-size: 28px;
+        text-decoration: underline;
     }
 `
 

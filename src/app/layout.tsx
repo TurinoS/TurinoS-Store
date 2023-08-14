@@ -1,6 +1,11 @@
+'use client'
+
 import type { Metadata } from 'next'
 import StyledComponentsRegistry from '../../registry'
 import { AppContextProvider } from '@/context/AppContext'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Banner from '@/components/Banner'
 
 export const metadata: Metadata = {
   title: 'TurinoS Store',
@@ -16,7 +21,11 @@ export default function RootLayout({
     <AppContextProvider>
       <html lang="en">
         <body>
-          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>  
+          <StyledComponentsRegistry>
+            <Header />
+              {children}
+            <Footer /> 
+          </StyledComponentsRegistry> 
         </body>
       </html>
     </AppContextProvider>

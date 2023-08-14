@@ -11,19 +11,17 @@ export const StyledHeader = styled.header`
     padding: 0 1em;
     height: 65px;
     width: 100vw;
-
-    .icons {
-        gap: 2em;
-    }
+    position: sticky;
+    top: 0;
+    box-shadow: 0 1px 6px 1px var(--light-plum);
 
     & img {
         position: absolute;
         top: 3px;
-        left: calc(50vw - 65px);
-        display: none;
+        left: calc(50vw - 105px);
 
-        @media (min-width: 380px) {
-            display: block;
+        @media (min-width: 400px) {
+            left: calc(50vw - 65px);    
         }
     }
 
@@ -74,30 +72,7 @@ export const Menu = styled.nav`
     }
 `
 
-export const SearchBar = styled.input`
-    padding: .5em 1em;
-    font-size: 18px;
-    border: none;
-    border-radius: 15px 5px;
-    box-shadow: 1px 1px 6px 1px var(--light-plum);
-    position: absolute;
-    z-index: 2;
-    top: 15px;
-    left: 105px;
-    width: 200px;
-
-    @media (min-width: 425px) {
-        width: 250px
-    }
-`   
-
 export const MenuIcon = styled(GiHamburgerMenu)`
-    &:hover {
-        cursor: pointer;
-    }
-`
-
-export const SearchIcon = styled(BiSearchAlt2)`
     &:hover {
         cursor: pointer;
     }

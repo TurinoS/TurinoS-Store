@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     :root {
+        --light-cream: #fcfbf6;
         --cream: #efe7d1;
         --plum: #312e39;
         --light-plum: #4e4174;
