@@ -21,10 +21,13 @@ type AppContextType = {
     womenData: Product[];
     jeweleryData: Product[];
     electronicsData: Product[];
+    cartList: Product[];
     cartPrice: number;
     cartItems: number;
     setCartPrice: Dispatch<SetStateAction<number>>;
     setCartItems: Dispatch<SetStateAction<number>>;
+    handleAddCart: (data: Product) => void;
+    handleRemoveCart: (data: Product) => void;
 };
 
 export const AppContext = createContext<AppContextType>({
@@ -33,10 +36,13 @@ export const AppContext = createContext<AppContextType>({
     womenData: [],
     jeweleryData: [],
     electronicsData: [],
+    cartList: [],
     cartPrice: 0.00,
     cartItems: 0,
     setCartPrice: () => {},
     setCartItems: () => {},
+    handleAddCart: () => {},
+    handleRemoveCart: () => {},
 });
 
 export function AppContextProvider({ children }: { children: ReactNode }) {
@@ -108,11 +114,23 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
 
     //-------------------Cart-------------------
 
+    const [cartList, setCartList] = useState<Product[]>([])
     const [cartPrice, setCartPrice] = useState<number>(0.00);
     const [cartItems, setCartItems] = useState<number>(0);
 
+    const handleAddCart = (data: Product): void => {
+        setCartList([ ...cartList, data ]);
+    }
+
+    const handleRemoveCart = (data: Product) => {
+        const newCartList = cartList.filter((item: Product) => item.id != data.id);
+        setCartList(newCartList);
+        setCartPrice(parseFloat((cartPrice - data.price).toFixed(2)));
+        setCartItems(cartItems - 1);
+    }
+
     return (
-        <AppContext.Provider value={{ homeData, menData, womenData, jeweleryData, electronicsData, cartPrice, cartItems, setCartPrice, setCartItems }}>
+        <AppContext.Provider value={{ homeData, menData, womenData, jeweleryData, electronicsData, cartPrice, cartItems, setCartPrice, setCartItems, cartList, handleRemoveCart, handleAddCart }}>
             {children}
         </AppContext.Provider>
     );

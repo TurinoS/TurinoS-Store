@@ -66,7 +66,7 @@ export default function Header() {
         <p>${cartPrice}</p>
         <div>
           <CartIcon onClick={openCart} />
-          <span>{cartItems}</span>
+          {cartItems != 0 && <span>{cartItems}</span>}
         </div>
       </div>
 
