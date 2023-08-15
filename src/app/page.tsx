@@ -10,6 +10,7 @@ import Banner from "@/components/Banner";
 
 type Product = {
   id: number;
+  qtt: number
   title: string;
   price: number;
   description: string,
@@ -22,13 +23,12 @@ type Product = {
 };
 
 export default function Home() {
-  const { homeData, cartPrice, setCartPrice, cartItems, setCartItems, handleAddCart, cartList } = useContext(AppContext);
+  const { homeData, cartPrice, setCartPrice, cartItems, setCartItems, handleAddCart } = useContext(AppContext);
 
   const addToCart = (price: number, item: Product) => {
     setCartPrice(parseFloat((cartPrice + price).toFixed(2)));
     setCartItems(cartItems + 1);
     handleAddCart(item);
-    console.log(cartList);
   }
 
   return (

@@ -100,6 +100,7 @@ const Button = styled.button`
 
 type Product = {
     id: number;
+    qtt: number;
     title: string;
     price: number;
     description: string,
@@ -122,7 +123,7 @@ export default function Cart() {
                     <CartItem key={index}>
                         <Image src={item.image} alt={item.title} width={50} height={60} />
                         <p>{item.title}</p>
-                        <h5>1 x ${item.price}</h5>
+                        <h5>{item.qtt - 1} x ${item.price}</h5>
                         <RemoveIcon onClick={() => handleRemoveCart(item)} />
                     </CartItem>
                 ))}

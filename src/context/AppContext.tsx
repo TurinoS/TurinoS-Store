@@ -4,6 +4,7 @@ import React, { createContext, Dispatch, ReactNode, SetStateAction, useEffect, u
 
 type Product = {
     id: number;
+    qtt: number;
     title: string;
     price: number;
     description: string,
@@ -55,7 +56,11 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         const fetchData = async () => {
             const res = await fetch('https://fakestoreapi.com/products');
             const jsonData = await res.json();
-            setHomeData(jsonData);
+            const updatedData = jsonData.map((product: Product) => ({
+                ...product,
+                qtt: 1,
+            }));
+            setHomeData(updatedData);
         };
         fetchData();
     }, []);
@@ -68,7 +73,11 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         const fetchData = async () => {
             const res = await fetch(`https://fakestoreapi.com/products/category/men's%20clothing`);
             const jsonData = await res.json();
-            setMenData(jsonData);
+            const updatedData = jsonData.map((product: Product) => ({
+                ...product,
+                qtt: 1,
+            }));
+            setMenData(updatedData);
         };
         fetchData();
     }, []);
@@ -81,7 +90,11 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         const fetchData = async () => {
             const res = await fetch(`https://fakestoreapi.com/products/category/women's%20clothing`);
             const jsonData = await res.json();
-            setWomenData(jsonData);
+            const updatedData = jsonData.map((product: Product) => ({
+                ...product,
+                qtt: 1,
+            }));
+            setWomenData(updatedData);
         };
         fetchData();
     }, []);
@@ -94,7 +107,11 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         const fetchData = async () => {
             const res = await fetch(`https://fakestoreapi.com/products/category/jewelery`);
             const jsonData = await res.json();
-            setJeweleryData(jsonData);
+            const updatedData = jsonData.map((product: Product) => ({
+                ...product,
+                qtt: 1,
+            }));
+            setJeweleryData(updatedData);
         };
         fetchData();
     }, []);
@@ -107,7 +124,11 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         const fetchData = async () => {
             const res = await fetch(`https://fakestoreapi.com/products/category/electronics`);
             const jsonData = await res.json();
-            setMenData(jsonData);
+            const updatedData = jsonData.map((product: Product) => ({
+                ...product,
+                qtt: 1,
+            }));
+            setMenData(updatedData);
         };
         fetchData();
     }, []);
@@ -119,14 +140,19 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
     const [cartItems, setCartItems] = useState<number>(0);
 
     const handleAddCart = (data: Product): void => {
-        setCartList([ ...cartList, data ]);
+        if(data.qtt === 1) {
+            setCartList([ ...cartList, data ]);
+            data.qtt = data.qtt + 1
+        } else {
+            data.qtt = data.qtt + 1
+        }
     }
 
     const handleRemoveCart = (data: Product) => {
         const newCartList = cartList.filter((item: Product) => item.id != data.id);
         setCartList(newCartList);
-        setCartPrice(parseFloat((cartPrice - data.price).toFixed(2)));
-        setCartItems(cartItems - 1);
+        setCartPrice(parseFloat((cartPrice - (data.price * (data.qtt - 1))).toFixed(2)));
+        setCartItems(cartItems - (data.qtt - 1));
     }
 
     return (
