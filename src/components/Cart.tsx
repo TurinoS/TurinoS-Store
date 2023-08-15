@@ -1,6 +1,7 @@
 import { AppContext } from "@/context/AppContext";
 import Image from "next/image";
 import { useContext } from "react";
+import { BsBagXFill } from "react-icons/bs";
 import styled from "styled-components";
 
 const StyledCart = styled.div`
@@ -20,6 +21,10 @@ const StyledCart = styled.div`
         flex-direction: column;
         overflow-y: auto;
     }
+
+    & p {
+        font-size: 17px;
+    }
 `
 
 const CartItem = styled.section`
@@ -28,8 +33,9 @@ const CartItem = styled.section`
     display: grid;
     grid-template-areas: 
     "img title"
-    "img price";
+    "btn price";
     grid-template-columns: 60px 1fr;
+    row-gap: .25em;
 
     & img {
         grid-area: img;
@@ -44,8 +50,24 @@ const CartItem = styled.section`
     }
 `
 
+const RemoveIcon = styled(BsBagXFill)`
+    border-radius: 50%;
+    background-color: var(--pale-coral);
+    color: var(--cream);
+    width: 24px;
+    height: 24px;
+    padding: 4px;
+    grid-area: btn;
+
+    &:hover {
+        background-color: var(--burnt-sienna);
+        cursor: pointer;
+    }
+`
+
 export default function Cart() {
     const { menData } = useContext(AppContext) 
+
     return(
         <StyledCart>
             <div>
@@ -53,14 +75,15 @@ export default function Cart() {
                     <CartItem key={item.id}>
                         <Image src={item.image} alt={item.title} width={50} height={60} />
                         <p>{item.title}</p>
-                        <p>1 x ${item.price}</p>
+                        <h4>1 x ${item.price}</h4>
+                        <RemoveIcon />
                     </CartItem>
                 ))}
                 {menData.map((item) => (
                     <CartItem key={item.id}>
                         <Image src={item.image} alt={item.title} width={50} height={60} />
                         <p className="title">{item.title}</p>
-                        <p className="price">1 x ${item.price}</p>
+                        <h4 className="price">1 x ${item.price}</h4>
                     </CartItem>
                 ))}
             </div>

@@ -20,15 +20,17 @@ export const StyledHeader = styled.header`
         position: absolute;
         top: 3px;
         left: calc(50vw - 100px);
+        width: 100px;
+        height: 50px;
 
         @media (min-width: 400px) {
-            left: calc(50vw - 65px);    
+            width: 130px;
+            height: 60px;  
         }
-    }
 
-    & p {
-        font-size: 15px;
-        align-self: center;
+        @media (min-width: 500px) {
+            left: calc(50vw - 65px);  
+        }
     }
 
     & div {

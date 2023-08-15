@@ -8,6 +8,8 @@ export const GlobalStyle = createGlobalStyle`
         --light-plum: #4e4174;
         --deep-coffee: #65451F;
         --yellow-neon: #F7E987;
+        --pale-coral: #df836e;
+        --burnt-sienna: #de4d2d;
     }
     
     * {
