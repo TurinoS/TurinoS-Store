@@ -1,5 +1,3 @@
-'use client'
-
 import type { Metadata } from 'next'
 import StyledComponentsRegistry from '../../registry'
 import { AppContextProvider } from '@/context/AppContext'
