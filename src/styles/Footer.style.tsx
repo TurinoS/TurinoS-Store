@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
     @media (min-width: 1100px) {
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: space-between;
     }
 
     & div {
