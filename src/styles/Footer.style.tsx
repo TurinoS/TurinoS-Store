@@ -10,6 +10,11 @@ const StyledFooter = styled.footer`
     gap: 2em;
     padding: 2em 1em;
 
+    @media (min-width: 1100px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
     & div {
         display: flex;
         flex-direction: column;
@@ -24,6 +29,10 @@ const StyledFooter = styled.footer`
         & a {
             text-decoration: none;
             color: var(--cream);
+
+        &:hover {
+            color: var(--yellow-neon);
+        }
         }
     }
 
@@ -34,8 +43,9 @@ const StyledFooter = styled.footer`
     }
 
     & .developer {
-        padding: 2em 3em;
+        padding: 2em 3em 0;
         border-top: 1px solid var(--light-plum);
+        width: 100%;
     }
 `
 
