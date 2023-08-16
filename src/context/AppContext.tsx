@@ -153,6 +153,7 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
         setCartList(newCartList);
         setCartPrice(parseFloat((cartPrice - (data.price * (data.qtt - 1))).toFixed(2)));
         setCartItems(cartItems - (data.qtt - 1));
+        data.qtt = 1;
     }
 
     return (
