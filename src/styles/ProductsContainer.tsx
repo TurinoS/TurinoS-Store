@@ -9,6 +9,8 @@ const ProductsContainer = styled.div`
 
     @media (min-width: 450px) {
         justify-content: space-between;
+        width: 100%;
+        min-height: 70vh;
     }
 `
 

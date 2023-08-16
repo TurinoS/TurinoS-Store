@@ -7,6 +7,8 @@ import { useContext } from "react";
 import ProductsContainer from "@/styles/ProductsContainer";
 import Wrapper from "@/styles/Wrapper";
 import Banner from "@/components/Banner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 type Product = {
   id: number;
@@ -33,25 +35,30 @@ export default function Jewelery() {
   }
 
   return (
-    <Wrapper>
-      <GlobalStyle />
+    <>
+      <Header />
+      <Wrapper>
+            <GlobalStyle />
 
-      <Banner name="Twiggy" text="“Não há necessidade de se vestir como todo mundo. É muito mais divertido criar seu próprio visual.”" />
+            <Banner name="Lauren Hutton" text="“Fashion is what you're offered four times a year by designers. And style is what you choose.”" />
 
-      <h2>Jewelery</h2>
+            <h2>Jewelery</h2>
 
-      <ProductsContainer>
-        {jeweleryData.map((item) => (
-          <ItemCard
-            key={item.id}
-            image={item.image}
-            price={item.price}
-            title={item.title}
-            rating={item.rating.rate}
-            onClick={() => addToCart(item.price, item)}
-          />
-        ))}
-      </ProductsContainer>
-    </Wrapper>
+            <ProductsContainer>
+              {jeweleryData.map((item) => (
+                <ItemCard
+                  key={item.id}
+                  image={item.image}
+                  price={item.price}
+                  title={item.title}
+                  rating={item.rating.rate}
+                  onClick={() => addToCart(item.price, item)}
+                />
+              ))}
+            </ProductsContainer>
+          </Wrapper>
+      <Footer />
+    </>
+    
   );
 }

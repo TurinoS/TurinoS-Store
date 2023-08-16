@@ -7,6 +7,8 @@ import { useContext } from "react";
 import ProductsContainer from "@/styles/ProductsContainer";
 import Wrapper from "@/styles/Wrapper";
 import Banner from "@/components/Banner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 type Product = {
   id: number;
@@ -32,23 +34,27 @@ export default function Home() {
   }
 
   return (
-    <Wrapper>
-      <GlobalStyle />
+    <>
+      <Header />
+      <Wrapper>
+            <GlobalStyle />
 
-      <Banner name="Miuccia Prada" text="“O que você veste é como você se apresenta ao mundo.”" />
+            <Banner name="Miuccia Prada" text="“What you wear is how you present yourself to the world, especially today, when human contacts are so quick. Fashion is instant language.”" />
 
-      <ProductsContainer>
-        {homeData.map((item) => (
-          <ItemCard
-            key={item.id}
-            image={item.image}
-            price={item.price}
-            title={item.title}
-            rating={item.rating.rate}
-            onClick={() => addToCart(item.price, item)}
-          />
-        ))}
-      </ProductsContainer>
-    </Wrapper>
+            <ProductsContainer>
+              {homeData.map((item) => (
+                <ItemCard
+                  key={item.id}
+                  image={item.image}
+                  price={item.price}
+                  title={item.title}
+                  rating={item.rating.rate}
+                  onClick={() => addToCart(item.price, item)}
+                />
+              ))}
+            </ProductsContainer>
+          </Wrapper>
+      <Footer />
+    </>
   );
 }

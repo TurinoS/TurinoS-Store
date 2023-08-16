@@ -19,9 +19,7 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <StyledComponentsRegistry>
-            <Header />
-              {children}
-            <Footer /> 
+            {children} 
           </StyledComponentsRegistry> 
         </body>
       </html>

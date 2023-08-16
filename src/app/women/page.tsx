@@ -7,6 +7,8 @@ import { useContext } from "react";
 import ProductsContainer from "@/styles/ProductsContainer";
 import Wrapper from "@/styles/Wrapper";
 import Banner from "@/components/Banner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 type Product = {
   id: number;
@@ -33,25 +35,30 @@ export default function Women() {
   }
 
   return (
-    <Wrapper>
-      <GlobalStyle />
+    <>
+      <Header />
+      <Wrapper>
+            <GlobalStyle />
 
-      <Banner name="Gianni Versace" text="“Você decide quem você é e o que quer expressar pela maneira como se veste e pela maneira como vive.”" />
+            <Banner name="Gianni Versace" text="“Don't make fashion own you, but you decide what you are, what you want to express by the way you dress and the way to live.”" />
 
-      <h2>Women&apos;s clothing</h2>
+            <h2>Women&apos;s clothing</h2>
 
-      <ProductsContainer>
-        {womenData.map((item) => (
-          <ItemCard
-            key={item.id}
-            image={item.image}
-            price={item.price}
-            title={item.title}
-            rating={item.rating.rate}
-            onClick={() => addToCart(item.price, item)}
-          />
-        ))}
-      </ProductsContainer>
-    </Wrapper>
+            <ProductsContainer>
+              {womenData.map((item) => (
+                <ItemCard
+                  key={item.id}
+                  image={item.image}
+                  price={item.price}
+                  title={item.title}
+                  rating={item.rating.rate}
+                  onClick={() => addToCart(item.price, item)}
+                />
+              ))}
+            </ProductsContainer>
+          </Wrapper>
+      <Footer />
+    </>
+    
   );
 }

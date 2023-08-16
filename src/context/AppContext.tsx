@@ -128,7 +128,7 @@ export function AppContextProvider({ children }: { children: ReactNode }) {
                 ...product,
                 qtt: 1,
             }));
-            setMenData(updatedData);
+            setElectronicsData(updatedData);
         };
         fetchData();
     }, []);

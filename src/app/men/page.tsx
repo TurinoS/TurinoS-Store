@@ -7,6 +7,8 @@ import { useContext } from "react";
 import ProductsContainer from "@/styles/ProductsContainer";
 import Wrapper from "@/styles/Wrapper";
 import Banner from "@/components/Banner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 type Product = {
   id: number;
@@ -33,25 +35,30 @@ export default function Men() {
   }
 
   return (
-    <Wrapper>
-      <GlobalStyle />
+    <>
+      <Header />
+      <Wrapper>
+            <GlobalStyle />
 
-      <Banner name="Yves Saint Laurent " text="“Boas roupas são um passaporte para a felicidade.”" />
+            <Banner name="Bill Cunningham" text="“Fashion is the armor to survive the reality of everyday life.”" />
 
-      <h2>Men&apos;s clothing</h2>
+            <h2>Men&apos;s clothing</h2>
 
-      <ProductsContainer>
-        {menData.map((item) => (
-          <ItemCard
-            key={item.id}
-            image={item.image}
-            price={item.price}
-            title={item.title}
-            rating={item.rating.rate}
-            onClick={() => addToCart(item.price, item)}
-          />
-        ))}
-      </ProductsContainer>
-    </Wrapper>
+            <ProductsContainer>
+              {menData.map((item) => (
+                <ItemCard
+                  key={item.id}
+                  image={item.image}
+                  price={item.price}
+                  title={item.title}
+                  rating={item.rating.rate}
+                  onClick={() => addToCart(item.price, item)}
+                />
+              ))}
+            </ProductsContainer>
+          </Wrapper>
+      <Footer />
+    </>
+    
   );
 }
