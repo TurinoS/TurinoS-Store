@@ -14,6 +14,8 @@ const StyledFooter = styled.footer`
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        padding: 2em;
+        column-gap: 1em;
     }
 
     & div {
