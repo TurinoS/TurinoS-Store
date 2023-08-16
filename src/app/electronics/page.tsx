@@ -10,6 +10,7 @@ import Banner from "@/components/Banner";
 
 type Product = {
   id: number;
+  qtt: number;
   title: string;
   price: number;
   description: string,

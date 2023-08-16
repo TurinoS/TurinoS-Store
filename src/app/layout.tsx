@@ -3,7 +3,6 @@ import StyledComponentsRegistry from '../../registry'
 import { AppContextProvider } from '@/context/AppContext'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Banner from '@/components/Banner'
 
 export const metadata: Metadata = {
   title: 'TurinoS Store',
