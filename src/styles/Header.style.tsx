@@ -16,6 +16,10 @@ export const StyledHeader = styled.header`
     top: 0;
     box-shadow: 0 1px 6px 1px var(--light-plum);
 
+    @media (min-width: 1024px) {
+        padding: 0 2em 0 0;
+    }
+
     & .img {
         position: absolute;
         top: 3px;
@@ -30,6 +34,14 @@ export const StyledHeader = styled.header`
 
         @media (min-width: 500px) {
             left: calc(50vw - 65px);  
+        }
+
+        @media (min-width: 1024px) {
+            left: calc(65vw);
+        }
+
+        @media (min-width: 1400px) {
+            left: calc(50vw - 65px);
         }
     }
 
@@ -55,7 +67,7 @@ export const StyledHeader = styled.header`
     }
 `
 
-export const Menu = styled.nav`
+export const MenuMobile = styled.nav`
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -81,8 +93,41 @@ export const Menu = styled.nav`
 `
 
 export const MenuIcon = styled(GiHamburgerMenu)`
+    @media (min-width: 1024px) {
+        display: none
+    }
+
     &:hover {
         cursor: pointer;
+    }
+`
+
+export const MenuDesktop = styled.nav`
+    display: none;
+
+    @media (min-width: 1024px) {
+        display: flex;
+        align-items: center;
+        background-color: var(--deep-coffee);
+        height: 100%;
+        font-size: 24px;
+
+        & .electronic {
+            border-right: none;
+        }
+        
+        & a {
+            text-decoration: none;
+            color: var(--cream);
+            font-weight: 600;
+            margin-bottom: .25em;
+            border-right: 1px solid var(--cream);
+            padding: 0 .75em;
+
+            &:hover {
+                color: var(--yellow-neon);
+            }
+        }
     }
 `
 

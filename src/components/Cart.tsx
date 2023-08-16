@@ -17,6 +17,11 @@ const StyledCart = styled.div`
     box-shadow: 1px 1px 6px 1px var(--light-plum);
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 1024px) {
+        left: calc(100vw - 450px);
+        width: 400px;
+    }
     
     & .items {
         display: flex;
@@ -41,6 +46,10 @@ const StyledCart = styled.div`
         padding: 0 1em 1em 1em;
         box-shadow: 0 -1px 6px 1px var(--light-plum);
         border-radius: 0 0 20px 5px;
+
+        @media (min-width: 1024px) {
+        width: 400px;
+    }
     }
 `
 
